@@ -1,0 +1,36 @@
+name: Cache Dependencies
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache dependencies
+        id: cache-step
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: cache-871147f
+
+      - name: prime-cache-871147f
+        run: echo "Cache hit result - ${{ steps.cache-step.outputs.cache-hit }}"
+```
+
+**5. Click "Commit changes"**
+
+This will automatically trigger the workflow. After ~30 seconds:
+
+**6. Check it ran at:**
+👉 https://github.com/22f1001576/my-portfolio/actions
+
+**Then submit your repo URL:**
+```
+https://github.com/22f1001576/my-portfolio
