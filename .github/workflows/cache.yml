@@ -22,15 +22,3 @@ jobs:
 
       - name: prime-cache-871147f
         run: echo "Cache hit result - ${{ steps.cache-step.outputs.cache-hit }}"
-```
-
-**5. Click "Commit changes"**
-
-This will automatically trigger the workflow. After ~30 seconds:
-
-**6. Check it ran at:**
-👉 https://github.com/22f1001576/my-portfolio/actions
-
-**Then submit your repo URL:**
-```
-https://github.com/22f1001576/my-portfolio
